@@ -1,0 +1,3 @@
+#not to publish node_modules and .env to remote git repository
+node_modules/ 
+.env
