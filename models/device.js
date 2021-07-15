@@ -43,6 +43,10 @@ const device_Schema = new mongoose.Schema({
     Status: {
         type: String, 
         required: true, 
+    }, 
+    Date: {
+        type: Date, 
+        default: Date.now
     }
 });
 

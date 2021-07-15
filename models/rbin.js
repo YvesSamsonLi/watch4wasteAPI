@@ -28,6 +28,10 @@ const rbin_Schema = new mongoose.Schema({
         type: Number, 
         required: true,
         minlength: 3
+    },
+    Date: {
+        type: Date, 
+        default: Date.now
     }
 });
 

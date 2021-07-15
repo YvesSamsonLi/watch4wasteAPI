@@ -17,6 +17,7 @@ const rBin_Route = require('./routes/rbin');
 app.use('/device', device_Route);
 app.use('/rbin', rBin_Route);
 
+
 //Create a logger 
 const logger = winston.createLogger({
     level: 'info',
@@ -42,7 +43,7 @@ mongoose.connect(
     {useNewUrlParser: true})
     .then(() => {
         //console.log("connected to MongoDB Atlas");
-        logger.info("info","connected to MongoDB Atlas");
+        logger.info("connected to MongoDB Atlas");
     })
     .catch((error) => {
         //console.log("Something was wrong");

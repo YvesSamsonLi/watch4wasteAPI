@@ -16,12 +16,24 @@ router.post('/', (req, res) => {
         device.save() 
         .then(data => {
             res.json(data);
+            console.log("Route for POST Device is called")
         })
         .catch(err => {
             res.json({message: err});
         });
 });
 
-console.log("Route for Device is called")
+router.get('/device', async(req,res) => {
+    try{
+        console.log("Router for Get Device data")
+        const device = await Device.find(req.params.body);
+        res.json(device);
+        console.log(device);
+    }
+    catch(err){
+        res.json({message: err});
+    }
+})
+
 
 module.exports = router;

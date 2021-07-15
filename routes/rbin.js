@@ -15,12 +15,24 @@ router.post('/', (req, res) => {
         R_Bin.save() 
         .then(data => {
             res.json(data);
+            console.log("Route for Recycling bin is called");
         })
         .catch(err => {
             res.json({message: err});
         });
 });
 
-console.log("Route for Recycling bin is called")
+router.get('/rBin', async(req,res) => {
+    try{
+        console.log("Router for Get Recycling Bin data");
+        const rbin = await RBin.find(req.params.body);
+        res.json(rbin);
+        console.log(rbin);
+    }
+    catch(err){
+        res.json({message: err});
+    }
+})
+
 
 module.exports = router;
